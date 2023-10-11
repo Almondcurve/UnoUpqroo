@@ -39,11 +39,31 @@ deck.push({color: null, number: "CC", type: "comun"});
 deck.push({color: null, number: "CC", type: "comun"});
 
 //npm init (inicializar un proyecto en node)
+//verifico que tenga el archivo package-json
 //npm install o i <modulo>
 
 //console.log(deck);
 
 const players = rl.question("¿cuantos jugadores seran?", {})
+const totalcards = players * 7;
+//repartir 7 cartas x jugador
+//dependencia (un codigo que depende de otro codigo)
+// node package manager (npm)
+// recorro el total de tarjetas (total de tarjetas = tarjetas x jugador)
+// un arreglo x jugador 
+//investigar comparadores, varidarodes de variables 
+var cardsPlayers = {};
 
+for(var cTcards = 0; cTcards < totalcards; cTcards++){
+    for(var cPlayers = 0; cPlayers < players; cPlayers++) {
+        //console.log(" players ", cPlayers)
+        if (!cardsPlayers["player_"+cPlayers]) {
+            cardsPlayers["player_"+cPlayers] = [];
+        }
 
-console.log(players)
+        cardsPlayers["player_"+cPlayers].push(deck[cTcards]);
+        console.log(cardsPlayers)
+        }
+}
+
+console.log(cardsPlayers);
