@@ -54,16 +54,36 @@ const totalcards = players * 7;
 //investigar comparadores, varidarodes de variables 
 var cardsPlayers = {};
 
-for(var cTcards = 0; cTcards < totalcards; cTcards++){
+for(var cTcards = 0; cTcards < 7; cTcards++){
     for(var cPlayers = 0; cPlayers < players; cPlayers++) {
         //console.log(" players ", cPlayers)
         if (!cardsPlayers["player_"+cPlayers]) {
             cardsPlayers["player_"+cPlayers] = [];
         }
 
-        cardsPlayers["player_"+cPlayers].push(deck[cTcards]);
-        console.log(cardsPlayers)
+        cardsPlayers["player_"+cPlayers].push(deck.shift());;
+        //console.log(deck.shift());
+        //console.log(cardsPlayers)
         }
 }
+        //trash.push(deck.shift()); para agregar una carta a trash aleatorio en la mesa
+var trash = [];
+trash.push(deck.shift());
 
-console.log(cardsPlayers);
+console.log(trash);
+//PASO 1: Definir mi funcion
+//PASO 2 : Hacer que la funcion reciba un parametro (carta)
+//PASO 3 : Obtener la información de la carta (numero, color)
+//PASO 4: comparar si el color de mi cartas obtenidas coinciden con la primera carta de trash
+//PASO 5: Sino, validar si el numero coincide
+//PASO 6: Si, la carta y el color coincide retornar la carta
+//PASO 7: Sino retornar nulo
+
+function cardValidation(card) {
+    console.log(card.number)
+    //if (card.number == 2) llamar a numero y carta 
+    if (card.number == 2) {
+        console.log("es igual");
+    } else {console.log("no es igual")}
+}   
+cardValidation({colors: "verde", number: 2, types: "comun"});
