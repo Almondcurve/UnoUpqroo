@@ -40,7 +40,7 @@ deck.push({color: null, number: "CC", type: "comun"});
 
 //npm init (inicializar un proyecto en node)
 //verifico que tenga el archivo package-json
-//npm install o i <modulo>
+//npm install o i <modulo (readline-sync)>
 
 //console.log(deck);
 
@@ -82,7 +82,7 @@ console.log(trash);
 function cardValidation(card) {
     console.log(card.number)
     //if (card.number == 2) llamar a numero y carta 
-    if (card.number == 2) {
+    if (card.number == 2, card.colors == "rojo") {
         console.log("es igual");
     } else {console.log("no es igual")}
 }   
