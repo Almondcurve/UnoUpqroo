@@ -82,8 +82,8 @@ console.log(trash);
 function cardValidation(card) {
     console.log(card.number)
     //if (card.number == 2) llamar a numero y carta 
-    if (card.number == 2, card.colors == "rojo") {
+    if (card.number == 2, card.colors == "verde") {
         console.log("es igual");
     } else {console.log("no es igual")}
 }   
-cardValidation({colors: "verde", number: 2, types: "comun"});
+cardValidation({colors: "verde", number: 2, types: "comun"}); 
