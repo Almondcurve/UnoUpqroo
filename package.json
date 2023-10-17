@@ -19,5 +19,6 @@
   "dependencies": {
     "readline-sync": "^1.4.10",
     "validador": "^0.1.6"
-  }
+  },
+  "devDependencies": {}
 }

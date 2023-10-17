@@ -85,5 +85,47 @@ function cardValidation(card) {
     if (card.number == 2, card.colors == "verde") {
         console.log("es igual");
     } else {console.log("no es igual")}
-}   
-cardValidation({colors: "verde", number: 2, types: "comun"}); 
+}  
+cardValidation({color: "Yellow", number: 3, types: "comun"});
+//mostrar todas las cartas que le tocaron al maso del primer jugador
+//nivel principal el player nos va traer un item (automaticamente identifica sin necesidad de identificarlo) 
+for(const player in cardsPlayers){
+    console.log(cardsPlayers[player]);
+    // npm i chalk@4.1.2 (https://www.npmjs.com/package/chalk)
+    // Primer player ponga una carta
+    // PASO 1: Ver mis cartas (listo)
+    // PASO 2: elejir carta
+    // PASO 3: Validar carta
+    // PASO 4: Poner carta (de mano jugador a trash)
+    //console.log(chalk.red('Hello', chalk.underline.bgBlue('world') + '!'));
+}
+console.log(trash);
+const Player1 = cardsPlayers["player_1"];
+Player1.forEach((card, listen) => { //permite recorrer estructuras que contienen varios elementos 
+  //(como matrices, recursos u objetos) sin necesidad de preocuparse por el numero de elementos.
+    console.log(`${listen + 1}: ${card.color} ${card.number}`);
+});
+//elegir carta
+  let Valid = false;
+  let cardlection;
+ do{ 
+  const Index = parseInt(rl.question("Elige el numero de carta que deseas jugar: ")) - 1;
+  
+      // Validar que el jugador eligio un indice valido
+ if (Index >= 0 && Index < Player1.length) {
+        cardlection= Player1[Index];
+  
+          // Paso 3: Validar carta
+          if (cardlection) 
+              Valid = true;
+              // Paso 4: Poner carta (de mano jugador a trash)
+              Player1.pop(Index, 1); // Elimina la carta del jugador
+              trash.push(cardlection); // Coloca la carta en trash
+              console.log("haz puesto:",cardlection, "como jugada" );
+            } else {
+              console.log("La carta elegida no es válida. Por favor, elige otra.");
+          }
+      }
+      while (!Valid);
+
+        console.log("Cartas tiradas:", trash);
