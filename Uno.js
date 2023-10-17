@@ -1,6 +1,5 @@
 // para solicitar al usuario
 const rl = require("readline-sync");
-
 //juego UNO
 var deck = [];
 var colors = ["Yellow","Blue", "Green", "Red"];
@@ -86,6 +85,15 @@ function cardValidation(card) {
         console.log("es igual");
     } else {console.log("no es igual")}
 }  
+    //length le va sumar mas 1 al arreglo y nos va regresar el tamaño del arreglo. pero... tenemos que restarle -1 
+    //if (card.number == 2) llamar a numero y carta  
+    //(los operadores pile evaluan que uno u otro sea verdadero y si una lo es se ejecuta (||)  
+    //los amperson (&&) evaluan y si las dos se cumplen para ejecutar, si una de ellas no se cumple, no se ejecuta
+    // 5 [0,1,2,3,4] 
+    if (card.number == trash[trash.length-1].number || card.color == trash[trash.length-1].color) {
+        console.log("es igual");
+    } else {console.log("no es igual")}
+
 cardValidation({color: "Yellow", number: 3, types: "comun"});
 //mostrar todas las cartas que le tocaron al maso del primer jugador
 //nivel principal el player nos va traer un item (automaticamente identifica sin necesidad de identificarlo) 
@@ -128,4 +136,4 @@ Player1.forEach((card, listen) => { //permite recorrer estructuras que contienen
       }
       while (!Valid);
 
-        console.log("Cartas tiradas:", trash);
+        console.log("Cartas tiradas:", trash); 
