@@ -1,5 +1,6 @@
 // para solicitar al usuario
 const rl = require("readline-sync");
+let MazoRevuelto = require('./modules/revuelvemazo')
 //juego UNO
 var deck = [];
 var colors = ["Yellow","Blue", "Green", "Red"];
@@ -107,33 +108,8 @@ for(const player in cardsPlayers){
     // PASO 4: Poner carta (de mano jugador a trash)
     //console.log(chalk.red('Hello', chalk.underline.bgBlue('world') + '!'));
 }
-console.log(trash);
-const Player1 = cardsPlayers["player_1"];
-Player1.forEach((card, listen) => { //permite recorrer estructuras que contienen varios elementos 
-  //(como matrices, recursos u objetos) sin necesidad de preocuparse por el numero de elementos.
-    console.log(`${listen + 1}: ${card.color} ${card.number}`);
-});
-//elegir carta
-  let Valid = false;
-  let cardlection;
- do{ 
-  const Index = parseInt(rl.question("Elige el numero de carta que deseas jugar: ")) - 1;
-  
-      // Validar que el jugador eligio un indice valido
- if (Index >= 0 && Index < Player1.length) {
-        cardlection= Player1[Index];
-  
-          // Paso 3: Validar carta
-          if (cardlection) 
-              Valid = true;
-              // Paso 4: Poner carta (de mano jugador a trash)
-              Player1.pop(Index, 1); // Elimina la carta del jugador
-              trash.push(cardlection); // Coloca la carta en trash
-              console.log("haz puesto:",cardlection, "como jugada" );
-            } else {
-              console.log("La carta elegida no es válida. Por favor, elige otra.");
-          }
-      }
-      while (!Valid);
 
-        console.log("Cartas tiradas:", trash); 
+MazoRevuelto(deck);
+
+console.log("Mazo revuelto:");
+console.log(deck);
