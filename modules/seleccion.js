@@ -37,12 +37,7 @@ function selectionUno(opciones, option){
     // Añade la opción transformada al final del nuevo array
     opcionesTransformadas.push(opcionTransformada);
   }
-
-  // Elimina la primera opción transformada del array
-  var primeraOpcion = opcionesTransformadas.push();
-      
-      //crear arrglo de carta en el que su valor es esto ["8-red", "6-green", "R-yellow"] usar shif o push este nuevo arreglo ira en opciones que esta abajo
-      //
+     
       seleccion =  selectOption(opcionesTransformadas, "Selecciona una carta:")
       break;
     case "UNO":
