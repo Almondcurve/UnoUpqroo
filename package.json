@@ -1,24 +1,24 @@
 {
   "name": "unoupqroo",
   "version": "1.0.0",
-  "description": "Juego Uno en Node.js",
-  "main": "Uno.js",
+  "description": "Juego Uno en NodeJS",
+  "main": "unuproo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Almondcurve/UnoUpqroo.git"
+    "url": "git+https://github.com/RobertoLayna/UnoUpqroo.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Almondcurve/UnoUpqroo/issues"
+    "url": "https://github.com/RobertoLayna/UnoUpqroo/issues"
   },
-  "homepage": "https://github.com/Almondcurve/UnoUpqroo#readme",
+  "homepage": "https://github.com/RobertoLayna/UnoUpqroo#readme",
   "dependencies": {
-    "readline-sync": "^1.4.10",
-    "validador": "^0.1.6"
-  },
-  "devDependencies": {}
+    "chalk": "^4.1.2",
+    "inquirer": "^8.0.1",
+    "readline-sync": "^1.4.10"
+  }
 }

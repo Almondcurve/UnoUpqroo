@@ -1,2 +1,2 @@
 # UnoUpqroo
-Juego Uno en Node.js
+Juego Uno en NodeJS
