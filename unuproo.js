@@ -69,8 +69,14 @@ async function jugar() {
 
   for (const player in cardsPlayers) {
     console.log("Jugador actual: ", player);
-    await selectionUno(cardsPlayers[player], "CHOICE");
+    const result = await selectionUno(cardsPlayers[player], "CHOICE");
+    //buscar carta seleccionada
+    console.log(result);
   }
+//mientras el turno no acabe
+//let end = false
+//while (end ==false) {}
+// //validar
 
   console.log(
     chalk.bgWhite("Ultima carta tirada:") +
