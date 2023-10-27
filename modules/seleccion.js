@@ -27,18 +27,18 @@ function selectionUno(opciones, option){
       break;
     case "CHOICE":
       
-    var opcionesTransformadas = [];
+    var Elejircartas = [];
 
   // Recorre cada objeto en el array de opciones
   for (var i = 0; i < opciones.length; i++) {
     // Transforma el objeto a un string en el formato "number-color"
-    var opcionTransformada = opciones[i].number + "-" + opciones[i].color;
+    var cartas = opciones[i].number + "-" + opciones[i].color;
 
     // Añade la opción transformada al final del nuevo array
-    opcionesTransformadas.push(opcionTransformada);
+    Elejircartas.push(cartas);
   }
      
-      seleccion =  selectOption(opcionesTransformadas, "Selecciona una carta:")
+      seleccion =  selectOption(Elejircartas, "Selecciona una carta:")
       break;
     case "UNO":
       break;
