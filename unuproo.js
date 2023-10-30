@@ -73,17 +73,49 @@ async function jugar() {
     //buscar carta seleccionada
     console.log(result);
   }
-//mientras el turno no acabe
-//let end = false
-//while (end ==false) {}
-// //validar
+ // Recorremos a los jugadores
+ for (const player in cardsPlayers) {
+  let end = false;
+  
+  while (end == false) {
+    
+    console.log("Jugador actual: ", player);
+    
+    const result = await selectionUno(cardsPlayers[player], "CHOICE");
+    
+    // Obtener el índice de la carta
+    const cardIndex = cardsPlayers[player].findIndex(card => card.number === result.number && card.color === result.color);
+    
+    // Validar la carta con la función cardValidation()
+    if (cardIndex !== -1 || cardValidation(cardsPlayers[player][cardIndex])) {
+      end = true; // Marcar el final del turno como verdadero
+      //Esto elimina la carta jugada del array de cartas del jugador usando el método splice(), y guarda esa carta en la variable playedCard.
+      const playedCard = cardsPlayers[player].splice(cardIndex, 1)[0];
+      trash.push(playedCard); // Agregar la carta al montón de descarte
 
-  console.log(
-    chalk.bgWhite("Ultima carta tirada:") +
-      " " +
-      chalk[trash[trash.length - 1].color].bold(trash[trash.length - 1].number)
-  );
-  console.log(trash[trash.length - 1]);
+      // Aquí puedes realizar cualquier otra lógica relacionada con el turno
+
+      // Pasar al siguiente jugador (suponiendo que tienes una función para hacerlo)
+      player = nextPlayer(player); // Debes definir la función nextPlayer()
+    } else {
+      console.log("Carta no válida, elige otra.");
+    }
+    // el while authmaticamente reinicia a el principio
+    /**
+     * NOTA: Si uso chatgpt 
+     * pedirle que me explique el codigo linea por linea
+     * NOTA 2: Si me pasan el codigo, que sea alguien 
+     * que me explique y sea el que lo hizo
+     */
+  }
+}
+
+console.log(
+  chalk.bgWhite("Ultima carta tirada:") +
+    " " +
+    chalk[trash[trash.length - 1].color].bold(trash[trash.length - 1].number)
+);
+console.log(trash[trash.length - 1]);
 }
 
 jugar();
